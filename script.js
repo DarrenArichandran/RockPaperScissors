@@ -35,13 +35,49 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === "paper") {
             return "win"
         } else (computerSelection === "scissor") 
-            return "tie" 
-        
-} 
-  const playerSelection1 = prompt("Make your choice; rock,paper or scissor?");
-  const playerSelection = (playerSelection1).toLowerCase();
-  let computerSelection = getComputerChoice();
+            return "tie"       
+    }
+
+
+    
   
+  /*
   console.log(playRound(playerSelection, computerSelection));
   console.log(computerSelection);
   console.log(computerSelection + (" ,") + playerSelection + (" ,") + playerSelection1);
+*/
+
+    function game() {
+      for  (let round = 1; round <= 5; round++){
+       
+    const playerSelection1 = prompt("Make your choice; rock,paper or scissor?");
+    let playerSelection = (playerSelection1).toLowerCase();
+    let computerSelection = getComputerChoice();
+
+       playRound(playerSelection, computerSelection)
+     console.log("Player" + " " + playRound(playerSelection, computerSelection));
+
+let playerScore = 0;
+let computerScore = 0; 
+
+// score above is being stored once increased - need to look at possibly using an array to call value once score icreases? //
+
+if (playRound(playerSelection, computerSelection) === "win") {
+    playerScore++
+} else if (playRound(playerSelection, computerSelection) === "lose" ) {
+    computerScore++
+}
+console.log( playerScore + " : " + computerScore)
+      }
+
+    }
+
+
+
+console.log(game())
+
+
+
+
+
+  
