@@ -8,7 +8,7 @@ function getComputerChoice() {
 }
 
 
-//below need to to write boolean to work out rock>scissors etc and return a string that declares winner//
+//below need to to write boolean to work out rock>scissors etc and return a string that declares winner [done!]//
 
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === "rock") {
@@ -29,13 +29,16 @@ function playRound(playerSelection, computerSelection) {
         return "lose" 
     }
 
-    else (playerSelection === "scissor") 
+    else if  (playerSelection === "scissor") {
         if (computerSelection === "rock"){
             return "lose"
         } else if (computerSelection === "paper") {
             return "win"
         } else (computerSelection === "scissor") 
-            return "tie"       
+            return "tie"  
+    } else if (playerSelection != "rock" || "paper" || "scissor") {
+        return " incorrect input, try again"
+    }     
     }
 
 
@@ -47,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
   console.log(computerSelection + (" ,") + playerSelection + (" ,") + playerSelection1);
 */
 
-    function game() {
+function game() {
       for  (let round = 1; round <= 5; round++){
        
     const playerSelection1 = prompt("Make your choice; rock,paper or scissor?");
@@ -57,10 +60,8 @@ function playRound(playerSelection, computerSelection) {
        playRound(playerSelection, computerSelection)
      console.log("Player" + " " + playRound(playerSelection, computerSelection));
 
-let playerScore = 0;
-let computerScore = 0; 
-
-// score above is being stored once increased - need to look at possibly using an array to call value once score icreases? //
+// score above is being stored once increased - need to look at possibly using an array to call value once score icreases? 
+//[done!] answer was way more simple, have score update outside of function //
 
 if (playRound(playerSelection, computerSelection) === "win") {
     playerScore++
@@ -68,13 +69,23 @@ if (playRound(playerSelection, computerSelection) === "win") {
     computerScore++
 }
 console.log( playerScore + " : " + computerScore)
-      }
 
     }
+    if (playerScore > computerScore) {
+        console.log("player is the winner");
+    } else if (playerScore < computerScore) {
+        console.log("computer is the winner"); 
+    } else {
+        console.log("its a tie")
+    }
+}
 
-
-
+let playerScore = 0;
+let computerScore = 0; 
 console.log(game())
+
+
+
 
 
 
