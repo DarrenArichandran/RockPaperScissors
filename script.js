@@ -61,7 +61,9 @@ const buttons = document.querySelectorAll('button');
         let playerSelection = button.id;
 
     playRound(playerSelection, getComputerChoice());
-    content.textContent = scoreboard(playerScore, computerScore);   
+    content.textContent = scoreboard(playerScore, computerScore);
+    pscore.textContent = (playerScore);
+    cscore.textContent = (computerScore);   
 });
 });
 
@@ -69,6 +71,17 @@ const scores = document.querySelector('#scores');
     const content = document.createElement('div');
     content.classList.add('content');
     scores.appendChild(content);
+
+
+const pScore = document.querySelector('#pScore');
+const pscore = document.createElement('div')
+    pscore.classList.add('pscore');
+    pScore.appendChild(pscore);
+
+const cScore = document.querySelector('#cScore');
+const cscore = document.createElement('div')
+    cscore.classList.add('pscore');
+    cScore.appendChild(cscore);
 
 
 
