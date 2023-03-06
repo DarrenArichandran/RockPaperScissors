@@ -10,6 +10,8 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
+
+
 function playRound(playerSelection, computerSelection) {
    if (playerSelection === "rock") {
         if (computerSelection === "paper") {
@@ -17,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
        } else if (computerSelection === "scissor") {
             ++playerScore;
         } else if (computerSelection === "rock") {
-            console.log("its a tie")
+            tie.textContent =("tie")
         }
     }
         
@@ -27,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === "scissor") 
          ++computerScore
         } else if (computerSelection === "paper") {
-            console.log("its a tie")
+            tie.textContent = ("tie")
     }
     
     else if  (playerSelection === "scissor") {
@@ -36,15 +38,17 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === "paper") {
             ++playerScore
     } else if (computerSelection === "scissor") {
-        console.log("its a tie")
+        tie.textContent = ("tie")
     }
 }
 
 if (computerScore >= 5) {
-    console.log("computer is winner")
+    winner.textContent = ("Computer is the winner! Grr")
 } else if (playerScore >= 5) {
-    console.log("player is the winner")
+    winner.textContent = ("WOO PLAYER IS THE WINNER")
 }
+
+
 }
 
 
@@ -52,6 +56,7 @@ function scoreboard(playerScore, computerScore) {
     let pScore = playerScore;
     let cScore = computerScore;
     return pScore + ":" + cScore;
+
 }
 
 
@@ -82,6 +87,16 @@ const cScore = document.querySelector('#cScore');
 const cscore = document.createElement('div')
     cscore.classList.add('pscore');
     cScore.appendChild(cscore);
+
+const Tie = document.querySelector('#tie');
+const tie = document.createElement('div')
+    tie.classList.add('tie');
+    Tie.appendChild(tie);
+
+const Winner = document.querySelector('#winner');
+const winner = document.createElement('div');
+        winner.classList.add('winner');
+        Winner.appendChild(winner);
 
 
 
